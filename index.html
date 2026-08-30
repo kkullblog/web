@@ -179,7 +179,7 @@
     const categoryList = ["전체", "서비스", "알뜰정보", "토렌트", "포털/커뮤니티", "파일위키", "블로그", "무료웹툰", "AI tool"];
 
     /* =========================================================
-       2. 전체 링크 데이터 (이미지 2장 내용 전체 수록)
+       2. 전체 링크 데이터
     ========================================================= */
     const links = [
       // [서비스]
@@ -194,13 +194,28 @@
       { category: "알뜰정보", name: "로고카이", url: "https://mybrandnewlogo.com/ko/", desc: "자동로고메이커", icon: "🎨" },
       { category: "알뜰정보", name: "쓩패스", url: "https://www.sshoong.com/pass/", desc: "해외배송정보", icon: "✈️" },
       { category: "알뜰정보", name: "중고서치", url: "https://father.is-an.ai/Market/#/", desc: "중고검색", icon: "🔍" },
-      { category: "알뜰정보", name: "데일리팝", url: "http://www.dailypop.kr/", desc: "1인가구미디어", icon: "📰" },
+      { category: "알뜰정보", name: "데일리팝", url: "https://www.dailypop.kr/", desc: "1인가구미디어", icon: "📰" },
       { category: "알뜰정보", name: "공공서비스", url: "https://yeyak.seoul.go.kr/web/main.do/", desc: "서울시공공예약", icon: "🏛️" },
       { category: "알뜰정보", name: "알구몬", url: "https://www.algumon.com/n/deal/", desc: "핫딜", icon: "🔥" },
       { category: "알뜰정보", name: "정보통통", url: "https://www.jungbo114.com/", desc: "잡다한 모든 정보", icon: "💡" },
       { category: "알뜰정보", name: "이지티켓", url: "https://easyticket.co.kr/", desc: "여행정보 매거진", icon: "🎫" },
       { category: "알뜰정보", name: "펴늬", url: "https://pyony.com/", desc: "편의점할인", icon: "🏪" },
       { category: "알뜰정보", name: "알뜰폰 허브", url: "https://www.alnba.or.kr", desc: "알뜰폰 요금제 비교 검색", icon: "📲" },
+      { category: "알뜰정보", name: "사기조회", url: "https://web.joongna.com/fraud", desc: "중고나라 사기조회", icon: "🚨" },
+      { category: "알뜰정보", name: "우아하우스", url: "https://wooahouse.com/", desc: "무제한 무료 도구모음", icon: "🧰" },
+      { category: "알뜰정보", name: "핫딜모아", url: "https://deal.kakao.party/?sort=latest&pick_seed=494623174", desc: "핫딜 사이트", icon: "🔥" },
+      { category: "알뜰정보", name: "비주얼에디터", url: "https://webeditor.co.kr/html/", desc: "PPT처럼 편집하는 사이트", icon: "🎨" },
+      { category: "알뜰정보", name: "부동산탐정", url: "https://www.tamjung.me/", desc: "아파트 매물 비교", icon: "🏢" },
+      { category: "알뜰정보", name: "너 그거 알아?", url: "https://nggrr.com/?category=%EC%A0%84%EC%B2%B4&time=6%EC%8B%9C%EA%B0%84&sourceId=all&sort=popular&excludeAdult=true&excludePolitics=true", desc: "커뮤니티 인기글 사이트", icon: "💬" },
+      { category: "알뜰정보", name: "마음", url: "https://mind.banjjak.net/", desc: "mbti, 사주, 궁합", icon: "🔮" },
+      { category: "알뜰정보", name: "핫딜 특가", url: "https://hotdeal.kimgoon.kr/", desc: "골드박스 특가", icon: "🎁" },
+      { category: "알뜰정보", name: "1인가구", url: "https://solo.kimgoon.kr/", desc: "자취 생존 가이드", icon: "🏠" },
+      { category: "알뜰정보", name: "캠핑고고", url: "https://camping.kimgoon.kr/", desc: "전국 캠핑장", icon: "⛺" },
+      { category: "알뜰정보", name: "삐뽀삐뽀", url: "https://sos.kimgoon.kr/", desc: "가까운 응급실·약국", icon: "🚑" },
+      { category: "알뜰정보", name: "싼타임", url: "https://ssantime.com/", desc: "싼 핫딜", icon: "⏳" },
+      { category: "알뜰정보", name: "툴즈", url: "https://wepplication.github.io/tools/", desc: "온라인도구", icon: "⚙️" },
+      { category: "알뜰정보", name: "보험슈퍼마켓", url: "https://www.e-insmarket.or.kr/", desc: "보험 다모아", icon: "🛡️" },
+      { category: "알뜰정보", name: "KOCW", url: "https://www.kocw.net/home/index.do", desc: "공개한 강의 동영상", icon: "🎓" },
 
       // [토렌트]
       { category: "토렌트", name: "이토렌트", url: "https://etoland.co.kr/", desc: "토렌트 커뮤", icon: "💬" },
@@ -211,18 +226,21 @@
       { category: "토렌트", name: "스키드로우", url: "https://www.skidrowreloaded.com/", desc: "복돌이", icon: "🎮" },
       { category: "토렌트", name: "도리리펙", url: "https://dodi-repacks.site/", desc: "복돌이", icon: "🕹️" },
       { category: "토렌트", name: "핏걸", url: "https://fitgirl-repacks.site/", desc: "복돌이", icon: "🎮" },
-      { category: "토렌트", name: "리팩게임을", url: "https://repack-games.com/", desc: "복돌이", icon: "🕹️" },
+      { category: "토렌트", name: "리팩게임", url: "https://repack-games.com/", desc: "복돌이", icon: "🕹️" },
       { category: "토렌트", name: "프로그탑넷", url: "https://prog-top.net/", desc: "소프트웨어", icon: "💾" },
       { category: "토렌트", name: "SmiDown", url: "https://subtitle.sunghwanyoo.com/", desc: "smi자막 검색", icon: "💬" },
       { category: "토렌트", name: "곰랩", url: "https://www.gomlab.com/subtitle-home/", desc: "곰랩자막 검색", icon: "🎬" },
       { category: "토렌트", name: "YTS", url: "https://www.yts.gg", desc: "영화 토렌트", icon: "🎬" },
       { category: "토렌트", name: "EXT", url: "https://ext.to/", desc: "토탈 토렌트", icon: "🌐" },
+      { category: "토렌트", name: "rarelust", url: "https://rarelust.com/", desc: "고전영화,ETC", icon: "🎬" },
+      { category: "토렌트", name: "JMD", url: "https://jpop.xyz/", desc: "J-pop Music Download", icon: "🎧" },
+      { category: "토렌트", name: "섭센스", url: "https://sub-scene.com/", desc: "sub titles", icon: "📝" },
 
       // [포털/커뮤니티]
       { category: "포털/커뮤니티", name: "인벤", url: "https://www.inven.co.kr/", desc: "게임 커뮤니티", icon: "⚔️" },
       { category: "포털/커뮤니티", name: "뽐뿌", url: "https://www.ppomppu.co.kr/", desc: "함께하는곳", icon: "🛒" },
-      { category: "포털/커뮤니티", name: "디시인사이드", url: "https://www.dcinside.com//", desc: "디시갤러리", icon: "💬" },
-      { category: "포털/커뮤니티", name: "SLR클럽", url: "https://www.slrclub.com//", desc: "사진 커뮤니티", icon: "📷" },
+      { category: "포털/커뮤니티", name: "디시인사이드", url: "https://www.dcinside.com/", desc: "디시갤러리", icon: "💬" },
+      { category: "포털/커뮤니티", name: "SLR클럽", url: "https://www.slrclub.com/", desc: "사진 커뮤니티", icon: "📷" },
       { category: "포털/커뮤니티", name: "인스티즈", url: "https://www.instiz.net/", desc: "팬덤", icon: "⭐" },
       { category: "포털/커뮤니티", name: "쿨엔조이", url: "https://coolenjoy.net/", desc: "PC 커뮤니티", icon: "🖥️" },
       { category: "포털/커뮤니티", name: "2CPU", url: "https://www.2cpu.co.kr/", desc: "듀얼메인보드사용자모임", icon: "⚙️" },
@@ -230,6 +248,7 @@
       { category: "포털/커뮤니티", name: "보배드림", url: "https://www.bobaedream.co.kr/", desc: "자동차쇼핑몰", icon: "🚗" },
       { category: "포털/커뮤니티", name: "에펨코리아", url: "https://www.fmkorea.com/", desc: "종합커뮤니티", icon: "⚽" },
       { category: "포털/커뮤니티", name: "윈도우포럼", url: "https://windowsforum.kr/", desc: "윈도우커뮤니티", icon: "🪟" },
+      { category: "포털/커뮤니티", name: "중찐구", url: "https://jjin9.com/tip/11/", desc: "커뮤니티", icon: "👥" },
 
       // [파일위키]
       { category: "파일위키", name: "스매쉬", url: "https://fromsmash.com/", desc: "용량 2GB / 7일 / 자동삭제", icon: "💥" },
@@ -250,7 +269,7 @@
       { category: "파일위키", name: "파일히포", url: "https://filehippo.com/", desc: "BEST & SAFE 소프트웨어", icon: "🦛" },
       { category: "파일위키", name: "다운크루", url: "https://www.downloadcrew.com/", desc: "엄선된 최고의 다운로드", icon: "⚓" },
       { category: "파일위키", name: "파일퓨마", url: "https://www.filepuma.com/", desc: "PC 소프트웨어", icon: "🐆" },
-      { category: "파일위키", name: "파일씨알", url: "https://filecr.com//", desc: "최대규모 소프트웨어", icon: "🗄️" },
+      { category: "파일위키", name: "파일씨알", url: "https://filecr.com/", desc: "최대규모 소프트웨어", icon: "🗄️" },
       { category: "파일위키", name: "보물닷컴", url: "https://software.dreamwiz.com/", desc: "(구)드림위즈 자료실", icon: "💎" },
       { category: "파일위키", name: "소프트다운타운", url: "https://www.softdowntown.com/", desc: "네이버자료실 대체", icon: "🏢" },
       { category: "파일위키", name: "케이벤치", url: "https://kbench.com/software/", desc: "필수 유틸리티", icon: "🔧" },
@@ -316,7 +335,7 @@
     // 카테고리 필터링 함수
     function filterCategory(category) {
       document.querySelectorAll('.category-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.innerText === category);
+        btn.classList.toggle('active', btn.textContent.trim() === category);
       });
 
       if (category === '전체') {
