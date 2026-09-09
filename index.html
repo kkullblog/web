@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>꿀링크</title>
+  <title>꿀링크 - 국내 최고 주소 모음</title>
   <style>
     :root {
       --bg-color: #f8f9fa;
       --card-bg: #ffffff;
       --text-color: #212529;
-      --primary-color: #3b82f6;
+      --primary-color: #00c73c;
       --border-color: #e5e7eb;
     }
 
@@ -23,28 +23,59 @@
     body {
       background-color: var(--bg-color);
       color: var(--text-color);
-      padding: 20px;
+      padding-bottom: 40px;
+    }
+
+    /* 이미지 스타일을 반영한 그린 헤더 영역 */
+    header {
+      background-color: #00c73c;
+      color: #ffffff;
+      text-align: center;
+      padding: 40px 20px 35px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .header-logo-container {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .header-top-text {
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    /* 이미지 속 365 상자 스타일 반영 */
+    .header-brand-badge {
+      background-color: #ffffff;
+      color: #00c73c;
+      font-size: 2.2rem;
+      font-weight: 900;
+      padding: 6px 28px;
+      border-radius: 16px;
+      display: inline-block;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      letter-spacing: -1px;
+      margin-bottom: 14px;
+    }
+
+    .header-sub-text {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.95);
+      letter-spacing: -0.5px;
     }
 
     .container {
       max-width: 1000px;
       margin: 0 auto;
-    }
-
-    header {
-      text-align: center;
-      padding: 30px 0 20px;
-    }
-
-    header h1 {
-      font-size: 2rem;
-      color: #1e293b;
-      margin-bottom: 8px;
-    }
-
-    header p {
-      color: #64748b;
-      font-size: 0.95rem;
+      padding: 0 20px;
     }
 
     /* 카테고리 필터 버튼 */
@@ -149,22 +180,27 @@
 
     .badge {
       font-size: 0.7rem;
-      background: #eff6ff;
-      color: var(--primary-color);
+      background: #e6f9ed;
+      color: #00c73c;
       padding: 2px 6px;
       border-radius: 4px;
       margin-left: 6px;
+      font-weight: 600;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <header>
-      <h1>📌 나만의 링크 랭킹 모음</h1>
-      <p>원하는 카테고리별 사이트 모음 및 바로가기</p>
-    </header>
+  <!-- 이미지 스타일이 적용된 그린 헤더 영역 -->
+  <header>
+    <div class="header-logo-container">
+      <div class="header-top-text">주소</div>
+      <div class="header-brand-badge">꿀링크</div>
+      <div class="header-sub-text">국내 최고 주소 모음</div>
+    </div>
+  </header>
 
+  <div class="container">
     <!-- 카테고리 필터 -->
     <div class="category-bar" id="categoryBar"></div>
 
@@ -296,9 +332,12 @@
       { category: "무료웹툰", name: "뉴토끼", url: "https://t.me/s/newtokinews", desc: "뉴토끼&마나토끼", icon: "🐰" },
       { category: "무료웹툰", name: "뚜툰", url: "https://ddtoon21.com/mlist.php", desc: "최근 웹툰", icon: "🎨" },
       { category: "무료웹툰", name: "미미티비", url: "https://mimitv3.com/", desc: "TV 다시보기", icon: "📺" },
+      { category: "무료웹툰", name: "뷰티비", url: "https://vitv88.com/", desc: "TV 다시보기", icon: "📺" },
+      { category: "무료웹툰", name: "낭티비", url: "https://nortv91.com/", desc: "TV 다시보기", icon: "📺" },
       { category: "무료웹툰", name: "콕콕티비", url: "https://xn--9w3b352aa608a.com/", desc: "무료 다시보기", icon: "📺" },
       { category: "무료웹툰", name: "무비킹", url: "https://mvking17.org/", desc: "TV 다시보기", icon: "🎬" },
       { category: "무료웹툰", name: "티비착", url: "https://tvchak.org/", desc: "TV 다시보기", icon: "📺" },
+      { category: "무료웹툰", name: "후후티비", url: "https://telegra.ph/%ED%9B%84%ED%9B%84%ED%8B%B0%EB%B9%B0-09-03/", desc: "TV 다시보기", icon: "📺" },
       { category: "무료웹툰", name: "애니어바웃", url: "https://www.aniabout2.com/", desc: "애니 다시보기", icon: "✨" },
       { category: "무료웹툰", name: "애니114", url: "https://jusobook1.com/bookmark_link/%ec%95%a0%eb%8b%88114/", desc: "애니 다시보기", icon: "✨" },
       { category: "무료웹툰", name: "고고티비", url: "https://gogotv.net/", desc: "TV 다시보기", icon: "📺" },
