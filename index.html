@@ -42,7 +42,7 @@
       align-items: center;
       justify-content: center;
       width: 100%;
-      max-width: 600px;
+      max-width: 620px;
     }
 
     /* 꿀링크 로고 배지 스타일 */
@@ -67,33 +67,40 @@
       margin-bottom: 20px;
     }
 
-    /* 네이버 검색창 영역 */
-    .naver-search-box {
+    /* 멀티 검색창 영역 */
+    .multi-search-box {
       width: 100%;
-      max-width: 520px;
+      max-width: 580px;
       background: #ffffff;
       border-radius: 30px;
-      padding: 6px 8px 6px 20px;
+      padding: 6px 8px 6px 14px;
       display: flex;
       align-items: center;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 
-    .naver-search-box form {
+    .multi-search-box form {
       display: flex;
       width: 100%;
       align-items: center;
     }
 
-    .naver-icon {
-      font-weight: 900;
-      font-size: 1.2rem;
-      color: #00c73c;
-      margin-right: 12px;
-      user-select: none;
+    /* 검색엔진 드롭다운 셀렉트 */
+    .search-engine-select {
+      border: none;
+      outline: none;
+      background: #f1f5f9;
+      color: #1e293b;
+      font-size: 0.9rem;
+      font-weight: 700;
+      padding: 8px 10px;
+      border-radius: 20px;
+      cursor: pointer;
+      margin-right: 10px;
+      flex-shrink: 0;
     }
 
-    .naver-search-input {
+    .multi-search-input {
       border: none;
       outline: none;
       width: 100%;
@@ -102,12 +109,12 @@
       color: #1e293b;
     }
 
-    .naver-search-input::placeholder {
+    .multi-search-input::placeholder {
       color: #94a3b8;
       font-weight: 500;
     }
 
-    .naver-search-btn {
+    .multi-search-btn {
       background-color: #00c73c;
       border: none;
       color: white;
@@ -123,7 +130,7 @@
       transition: background-color 0.2s ease;
     }
 
-    .naver-search-btn:hover {
+    .multi-search-btn:hover {
       background-color: #00b336;
     }
 
@@ -252,12 +259,17 @@
       <div class="header-brand-badge">꿀링크</div>
       <div class="header-sub-text">국내 최고 주소 모음</div>
       
-      <!-- 네이버 검색창 -->
-      <div class="naver-search-box">
-        <form action="https://search.naver.com/search.naver" method="get" target="_blank">
-          <span class="naver-icon">N</span>
-          <input type="text" name="query" class="naver-search-input" placeholder="네이버 검색어를 입력하세요" required>
-          <button type="submit" class="naver-search-btn" title="검색">🔍</button>
+      <!-- 통합 검색창 (구글, 네이버, 다음, 네이트) -->
+      <div class="multi-search-box">
+        <form onsubmit="return doSearch();">
+          <select id="searchEngine" class="search-engine-select">
+            <option value="https://search.naver.com/search.naver?query=" selected>네이버</option>
+            <option value="https://www.google.com/search?q=">구글</option>
+            <option value="https://search.daum.net/search?q=">다음</option>
+            <option value="https://search.nate.com/search/all.html?q=">네이트</option>
+          </select>
+          <input type="text" id="searchQuery" class="multi-search-input" placeholder="검색어를 입력하세요" required>
+          <button type="submit" class="multi-search-btn" title="검색">🔍</button>
         </form>
       </div>
     </div>
@@ -272,6 +284,20 @@
   </div>
 
   <script>
+    /* =========================================================
+       0. 통합 검색 실행 함수
+    ========================================================= */
+    function doSearch() {
+      const engineUrl = document.getElementById('searchEngine').value;
+      const query = document.getElementById('searchQuery').value.trim();
+
+      if (query) {
+        // 선택한 검색엔진의 URL과 검색어를 결합하여 새 탭에서 열기
+        window.open(engineUrl + encodeURIComponent(query), '_blank');
+      }
+      return false; // form의 기본 submit 방지
+    }
+
     /* =========================================================
        1. 카테고리 목록 설정
     ========================================================= */
