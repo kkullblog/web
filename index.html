@@ -6,10 +6,11 @@
   <title>꿀링크 - 국내 최고 주소 모음</title>
   <style>
     :root {
-      --bg-color: #f8f9fa;
+      --bg-color: #fdfbf8;
       --card-bg: #ffffff;
       --text-color: #212529;
       --primary-color: #00c73c;
+      --accent-orange: #ff5722;
       --border-color: #e5e7eb;
     }
 
@@ -26,57 +27,101 @@
       padding-bottom: 40px;
     }
 
-    /* 헤더 영역 디자인 */
+    /* 이미지 스타일 반영 헤더 */
     header {
-      background-color: #00c73c;
-      color: #ffffff;
+      background-color: #fffaf5;
       text-align: center;
-      padding: 35px 20px 30px;
+      padding: 45px 20px 40px;
       margin-bottom: 30px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      border-bottom: 1px solid #f0e6df;
     }
 
-    .header-logo-container {
-      display: inline-flex;
+    .header-container {
+      display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 100%;
-      max-width: 620px;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
-    /* 꿀링크 로고 배지 스타일 */
-    .header-brand-badge {
-      background-color: #ffffff;
-      color: #00c73c;
-      font-size: 2.2rem;
-      font-weight: 900;
-      padding: 6px 28px;
-      border-radius: 16px;
+    /* 상단 배지 */
+    .header-top-badge {
+      background-color: #ffede8;
+      color: var(--accent-orange);
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 6px 16px;
+      border-radius: 20px;
       display: inline-block;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      letter-spacing: -1px;
-      margin-bottom: 10px;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
     }
 
+    /* 메인 타이틀 */
+    .header-title {
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 10px;
+      letter-spacing: -1px;
+    }
+
+    .header-title .highlight {
+      color: var(--accent-orange);
+    }
+
+    /* 서브 타이틀 (수정됨) */
     .header-sub-text {
       font-size: 1.05rem;
+      color: #475569;
+      margin-bottom: 25px;
       font-weight: 700;
-      color: rgba(255, 255, 255, 0.95);
-      letter-spacing: -0.5px;
-      margin-bottom: 20px;
+      background: #f1f5f9;
+      padding: 6px 18px;
+      border-radius: 20px;
+      display: inline-block;
     }
 
-    /* 멀티 검색창 영역 */
+    /* 검색 영역 탭 선택기 */
+    .search-tab-bar {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 12px;
+      background: #f1f5f9;
+      padding: 4px;
+      border-radius: 25px;
+    }
+
+    .search-tab {
+      border: none;
+      background: transparent;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #64748b;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .search-tab.active {
+      background-color: #1e293b;
+      color: #ffffff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    /* 멀티 검색창 바 */
     .multi-search-box {
       width: 100%;
-      max-width: 580px;
+      max-width: 680px;
       background: #ffffff;
+      border: 2px solid var(--accent-orange);
       border-radius: 30px;
-      padding: 6px 8px 6px 14px;
       display: flex;
       align-items: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+      box-shadow: 0 6px 16px rgba(255, 87, 34, 0.12);
     }
 
     .multi-search-box form {
@@ -85,25 +130,24 @@
       align-items: center;
     }
 
-    /* 검색엔진 드롭다운 셀렉트 */
-    .search-engine-select {
+    /* 기존 select 태그 원복 */
+    .engine-select {
       border: none;
       outline: none;
-      background: #f1f5f9;
-      color: #1e293b;
-      font-size: 0.9rem;
+      background: #f8fafc;
+      padding: 12px 14px;
+      font-size: 0.92rem;
       font-weight: 700;
-      padding: 8px 10px;
-      border-radius: 20px;
+      color: #334155;
       cursor: pointer;
-      margin-right: 10px;
-      flex-shrink: 0;
+      border-right: 1px solid #e2e8f0;
     }
 
     .multi-search-input {
       border: none;
       outline: none;
       width: 100%;
+      padding: 12px 18px;
       font-size: 1rem;
       font-weight: 600;
       color: #1e293b;
@@ -111,27 +155,26 @@
 
     .multi-search-input::placeholder {
       color: #94a3b8;
-      font-weight: 500;
+      font-weight: 400;
     }
 
     .multi-search-btn {
-      background-color: #00c73c;
+      background: linear-gradient(135deg, #ff6b35, #ff3b00);
       border: none;
       color: white;
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
+      width: 60px;
+      height: 48px;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       flex-shrink: 0;
-      transition: background-color 0.2s ease;
+      transition: opacity 0.2s ease;
     }
 
     .multi-search-btn:hover {
-      background-color: #00b336;
+      opacity: 0.9;
     }
 
     .container {
@@ -201,9 +244,9 @@
       text-align: center;
     }
 
-    .link-card:nth-child(1) .rank-number { color: #ef4444; } /* 1위 빨강 */
-    .link-card:nth-child(2) .rank-number { color: #f97316; } /* 2위 주황 */
-    .link-card:nth-child(3) .rank-number { color: #eab308; } /* 3위 노랑 */
+    .link-card:nth-child(1) .rank-number { color: #ef4444; }
+    .link-card:nth-child(2) .rank-number { color: #f97316; }
+    .link-card:nth-child(3) .rank-number { color: #eab308; }
 
     .link-icon {
       width: 40px;
@@ -255,20 +298,31 @@
 
   <!-- 헤더 영역 -->
   <header>
-    <div class="header-logo-container">
-      <div class="header-brand-badge">꿀링크</div>
-      <div class="header-sub-text">국내 최고 주소 모음</div>
+    <div class="header-container">
+      <div class="header-top-badge">• QUICK LINK COLLECTION</div>
+      <h1 class="header-title">찾고 싶은 주소, <span class="highlight">한 번에 빠르게</span></h1>
+      <div class="header-sub-text">🍯 꿀링크 : 국내 최고 주소 모음</div>
       
-      <!-- 통합 검색창 (구글, 네이버, 다음, 네이트) -->
+      <!-- 검색 탭 (이미지 스타일 구현) -->
+      <div class="search-tab-bar">
+        <button class="search-tab active" onclick="setEngineByTab('naver', this)">네이버</button>
+        <button class="search-tab" onclick="setEngineByTab('google', this)">구글</button>
+        <button class="search-tab" onclick="setEngineByTab('daum', this)">다음</button>
+        <button class="search-tab" onclick="setEngineByTab('youtube', this)">유튜브</button>
+        <button class="search-tab" onclick="setEngineByTab('bing', this)">Bing</button>
+      </div>
+
+      <!-- 통합 검색창 (원복된 select 요소 적용) -->
       <div class="multi-search-box">
         <form onsubmit="return doSearch();">
-          <select id="searchEngine" class="search-engine-select">
-            <option value="https://search.naver.com/search.naver?query=" selected>네이버</option>
+          <select id="engineSelect" class="engine-select">
+            <option value="https://search.naver.com/search.naver?query=">네이버</option>
             <option value="https://www.google.com/search?q=">구글</option>
             <option value="https://search.daum.net/search?q=">다음</option>
-            <option value="https://search.nate.com/search/all.html?q=">네이트</option>
+            <option value="https://www.youtube.com/results?search_query=">유튜브</option>
+            <option value="https://www.bing.com/search?q=">Bing</option>
           </select>
-          <input type="text" id="searchQuery" class="multi-search-input" placeholder="검색어를 입력하세요" required>
+          <input type="text" id="searchQuery" class="multi-search-input" placeholder="사이트 이름 또는 주소를 검색하세요" required>
           <button type="submit" class="multi-search-btn" title="검색">🔍</button>
         </form>
       </div>
@@ -285,17 +339,37 @@
 
   <script>
     /* =========================================================
-       0. 통합 검색 실행 함수
+       0. 검색 기능 제어
     ========================================================= */
     function doSearch() {
-      const engineUrl = document.getElementById('searchEngine').value;
-      const query = document.getElementById('searchQuery').value.trim();
+      const selectElem = document.getElementById('engineSelect');
+      const queryElem = document.getElementById('searchQuery');
+      const url = selectElem.value;
+      const query = queryElem.value.trim();
 
       if (query) {
-        // 선택한 검색엔진의 URL과 검색어를 결합하여 새 탭에서 열기
-        window.open(engineUrl + encodeURIComponent(query), '_blank');
+        window.open(url + encodeURIComponent(query), '_blank');
       }
-      return false; // form의 기본 submit 방지
+      return false;
+    }
+
+    // 탭 클릭 시 select 동시 변경
+    function setEngineByTab(engineKey, btn) {
+      document.querySelectorAll('.search-tab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+
+      const selectElem = document.getElementById('engineSelect');
+      const engineUrls = {
+        'naver': 'https://search.naver.com/search.naver?query=',
+        'google': 'https://www.google.com/search?q=',
+        'daum': 'https://search.daum.net/search?q=',
+        'youtube': 'https://www.youtube.com/results?search_query=',
+        'bing': 'https://www.bing.com/search?q='
+      };
+
+      if (engineUrls[engineKey]) {
+        selectElem.value = engineUrls[engineKey];
+      }
     }
 
     /* =========================================================
