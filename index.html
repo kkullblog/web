@@ -71,7 +71,7 @@
       color: var(--accent-orange);
     }
 
-    /* 서브 타이틀 (수정됨) */
+    /* 서브 타이틀 */
     .header-sub-text {
       font-size: 1.05rem;
       color: #475569;
@@ -130,7 +130,6 @@
       align-items: center;
     }
 
-    /* 기존 select 태그 원복 */
     .engine-select {
       border: none;
       outline: none;
@@ -303,7 +302,7 @@
       <h1 class="header-title">찾고 싶은 주소, <span class="highlight">한 번에 빠르게</span></h1>
       <div class="header-sub-text">🍯 꿀링크 : 국내 최고 주소 모음</div>
       
-      <!-- 검색 탭 (이미지 스타일 구현) -->
+      <!-- 검색 탭 -->
       <div class="search-tab-bar">
         <button class="search-tab active" onclick="setEngineByTab('naver', this)">네이버</button>
         <button class="search-tab" onclick="setEngineByTab('google', this)">구글</button>
@@ -312,7 +311,7 @@
         <button class="search-tab" onclick="setEngineByTab('bing', this)">Bing</button>
       </div>
 
-      <!-- 통합 검색창 (원복된 select 요소 적용) -->
+      <!-- 통합 검색창 -->
       <div class="multi-search-box">
         <form onsubmit="return doSearch();">
           <select id="engineSelect" class="engine-select">
@@ -353,7 +352,6 @@
       return false;
     }
 
-    // 탭 클릭 시 select 동시 변경
     function setEngineByTab(engineKey, btn) {
       document.querySelectorAll('.search-tab').forEach(t => t.classList.remove('active'));
       btn.classList.add('active');
@@ -378,7 +376,7 @@
     const categoryList = ["전체", "서비스", "알뜰정보", "토렌트", "포털/커뮤니티", "파일위키", "블로그", "무료웹툰", "AI tool"];
 
     /* =========================================================
-       2. 전체 링크 데이터
+       2. 전체 링크 데이터 (요청 항목 추가 완료)
     ========================================================= */
     const links = [
       // [서비스]
@@ -421,6 +419,7 @@
       { category: "알뜰정보", name: "평생요금제", url: "https://xn--jj0b307ao9d3ub5v1a.com/", desc: "요금제 검색", icon: "📱" },
       { category: "알뜰정보", name: "이지플랜", url: "https://easyplan.kr/", desc: "일정관리", icon: "📅" },
       { category: "알뜰정보", name: "캐바캐", url: "https://www.caskbycask.net", desc: "주류 정보", icon: "🥃" },
+      { category: "알뜰정보", name: "엑셀코스피", url: "https://excelkospi.pages.dev/", desc: "엑셀 보는 척 주식 시세 보기", icon: "📊" },
 
       // [토렌트]
       { category: "토렌트", name: "이토렌트", url: "https://etoland.co.kr/", desc: "토렌트 커뮤", icon: "💬" },
@@ -494,14 +493,14 @@
       { category: "블로그", name: "열목이", url: "https://lenok-love.tistory.com/", desc: "자동화 방송", icon: "🤖" },
 
       // [무료웹툰]
+      { category: "무료웹툰", name: "일일툰", url: "https://t.me/s/toonlink11", desc: "11툰 공식 채널", icon: "📖" },
+      { category: "무료웹툰", name: "펀비", url: "https://t.me/s/funbe_next", desc: "웹툰-펀비", icon: "📖" },
+      { category: "무료웹툰", name: "블랙툰", url: "https://t.me/s/blacktoonlink", desc: "블랙툰 공식 채널", icon: "🖤" },
       { category: "무료웹툰", name: "코사이트", url: "https://korsite.net/", desc: "최신 정보와 대체 사이트", icon: "🌐" },
-      { category: "무료웹툰", name: "펀비", url: "https://t.me/s/funbe_next/", desc: "웹툰", icon: "📖" },
       { category: "무료웹툰", name: "늑대닷컴", url: "https://t.me/s/wfwf_com", desc: "늑대닷컴 공식채널", icon: "🐺" },
       { category: "무료웹툰", name: "뉴토끼", url: "https://t.me/s/newtokinews", desc: "뉴토끼&마나토끼", icon: "🐰" },
       { category: "무료웹툰", name: "뚜툰", url: "https://ddtoon21.com/mlist.php", desc: "최근 웹툰", icon: "🎨" },
-      { category: "무료웹툰", name: "미미티비", url: "https://mimitv3.com/", desc: "TV 다시보기", icon: "📺" },
-      { category: "무료웹툰", name: "뷰티비", url: "https://vitv88.com/", desc: "TV 다시보기", icon: "📺" },
-      { category: "무료웹툰", name: "낭티비", url: "https://nortv91.com/", desc: "TV 다시보기", icon: "📺" },
+      { category: "무료웹툰", name: "미미티비", url: "https://xn--hg3ba87o95e83l04o.com/", desc: "TV 다시보기", icon: "📺" },
       { category: "무료웹툰", name: "콕콕티비", url: "https://xn--9w3b352aa608a.com/", desc: "무료 다시보기", icon: "📺" },
       { category: "무료웹툰", name: "무비킹", url: "https://mvking17.org/", desc: "TV 다시보기", icon: "🎬" },
       { category: "무료웹툰", name: "티비착", url: "https://tvchak.org/", desc: "TV 다시보기", icon: "📺" },
