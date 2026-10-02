@@ -376,12 +376,12 @@
     const categoryList = ["전체", "서비스", "알뜰정보", "토렌트", "포털/커뮤니티", "파일위키", "블로그", "무료웹툰", "AI tool"];
 
     /* =========================================================
-       2. 전체 링크 데이터 (요청 항목 추가 완료)
+       2. 전체 링크 데이터
     ========================================================= */
     const links = [
       // [서비스]
       { category: "서비스", name: "코버스", url: "https://www.kobus.co.kr/main.do", desc: "고속버스통합예매", icon: "🚌" },
-      { category: "서비스", name: "구글지도", url: "https://www.google.co.kr/maps", desc: "지도맵", icon: "🗺️" },
+      { category: "서비스", name: "구글지도", url: "https://www.google.co.kr/maps", desc: "지도맵", icon: "🗺️️" },
       { category: "서비스", name: "지하철노선", url: "https://map.naver.com/p/subway/1000/-/-/", desc: "네이버노선표", icon: "🚇" },
       { category: "서비스", name: "우편번호", url: "https://www.epost.go.kr/search.RetrieveIntegrationNewZipCdList.comm", desc: "우편번호검색", icon: "📮" },
       { category: "서비스", name: "카카오맵", url: "https://map.kakao.com/?nil_profile=title&nil_src=local", desc: "교통정보", icon: "📍" },
@@ -420,6 +420,10 @@
       { category: "알뜰정보", name: "이지플랜", url: "https://easyplan.kr/", desc: "일정관리", icon: "📅" },
       { category: "알뜰정보", name: "캐바캐", url: "https://www.caskbycask.net", desc: "주류 정보", icon: "🥃" },
       { category: "알뜰정보", name: "엑셀코스피", url: "https://excelkospi.pages.dev/", desc: "엑셀 보는 척 주식 시세 보기", icon: "📊" },
+      { category: "알뜰정보", name: "혼서가", url: "https://honseoga.kr/", desc: "혼자 사는 사람들의 지식 서가", icon: "📚" },
+      { category: "알뜰정보", name: "이럴땐", url: "https://whathow.vercel.app/", desc: "물어보기 애매한 인생 기본상식", icon: "❓" },
+      { category: "알뜰정보", name: "메리톡톡", url: "https://www.merrytoktok.com/", desc: "창작 및 집필 활동", icon: "✍️" },
+      { category: "알뜰정보", name: "핫덕", url: "https://hotduk.com/", desc: "핫딜모음", icon: "🔥" },
 
       // [토렌트]
       { category: "토렌트", name: "이토렌트", url: "https://etoland.co.kr/", desc: "토렌트 커뮤", icon: "💬" },
@@ -456,6 +460,8 @@
       { category: "포털/커뮤니티", name: "중찐구", url: "https://jjin9.com/tip/11/", desc: "커뮤니티", icon: "👥" },
       { category: "포털/커뮤니티", name: "클리앙", url: "https://www.clien.net/", desc: "모두의 광장", icon: "💬" },
       { category: "포털/커뮤니티", name: "깃허브", url: "https://github.com/", desc: "코드 호스팅 플랫폼", icon: "🐙" },
+      { category: "포털/커뮤니티", name: "AMKINA", url: "https://amkinamusic.com/", desc: "음원 스트리밍 사이트", icon: "🎵" },
+      { category: "포털/커뮤니티", name: "슬래시페이지", url: "https://slashpage.com/", desc: "웹사이트빌더", icon: "🌐" },
 
       // [파일위키]
       { category: "파일위키", name: "스매쉬", url: "https://fromsmash.com/", desc: "용량 2GB / 7일 / 자동삭제", icon: "💥" },
@@ -493,14 +499,17 @@
       { category: "블로그", name: "열목이", url: "https://lenok-love.tistory.com/", desc: "자동화 방송", icon: "🤖" },
 
       // [무료웹툰]
-      { category: "무료웹툰", name: "일일툰", url: "https://t.me/s/toonlink11", desc: "11툰 공식 채널", icon: "📖" },
+      { category: "무료웹툰", name: "일일툰", url: "https://t.me/s/toonlink11", desc: "TV 다시보기", icon: "📺" },
+      { category: "무료웹툰", name: "뉴툰", url: "https://t.me/s/newtoonlink", desc: "11툰 공식 채널", icon: "📖" },
       { category: "무료웹툰", name: "펀비", url: "https://t.me/s/funbe_next", desc: "웹툰-펀비", icon: "📖" },
       { category: "무료웹툰", name: "블랙툰", url: "https://t.me/s/blacktoonlink", desc: "블랙툰 공식 채널", icon: "🖤" },
       { category: "무료웹툰", name: "코사이트", url: "https://korsite.net/", desc: "최신 정보와 대체 사이트", icon: "🌐" },
       { category: "무료웹툰", name: "늑대닷컴", url: "https://t.me/s/wfwf_com", desc: "늑대닷컴 공식채널", icon: "🐺" },
       { category: "무료웹툰", name: "뉴토끼", url: "https://t.me/s/newtokinews", desc: "뉴토끼&마나토끼", icon: "🐰" },
       { category: "무료웹툰", name: "뚜툰", url: "https://ddtoon21.com/mlist.php", desc: "최근 웹툰", icon: "🎨" },
-      { category: "무료웹툰", name: "미미티비", url: "https://xn--hg3ba87o95e83l04o.com/", desc: "TV 다시보기", icon: "📺" },
+      { category: "무료웹툰", name: "미미티비", url: "https://mimitv3.com/", desc: "TV 다시보기", icon: "📺" },
+      { category: "무료웹툰", name: "뷰티비", url: "https://vitv88.com/", desc: "TV 다시보기", icon: "📺" },
+      { category: "무료웹툰", name: "낭티비", url: "https://nortv91.com/", desc: "TV 다시보기", icon: "📺" },
       { category: "무료웹툰", name: "콕콕티비", url: "https://xn--9w3b352aa608a.com/", desc: "무료 다시보기", icon: "📺" },
       { category: "무료웹툰", name: "무비킹", url: "https://mvking17.org/", desc: "TV 다시보기", icon: "🎬" },
       { category: "무료웹툰", name: "티비착", url: "https://tvchak.org/", desc: "TV 다시보기", icon: "📺" },
