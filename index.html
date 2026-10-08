@@ -91,6 +91,8 @@
       background: #f1f5f9;
       padding: 4px;
       border-radius: 25px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .search-tab {
@@ -376,12 +378,12 @@
     const categoryList = ["전체", "서비스", "알뜰정보", "토렌트", "포털/커뮤니티", "파일위키", "블로그", "무료웹툰", "AI tool"];
 
     /* =========================================================
-       2. 전체 링크 데이터
+       2. 전체 링크 데이터 (총 104개 링크)
     ========================================================= */
     const links = [
       // [서비스]
       { category: "서비스", name: "코버스", url: "https://www.kobus.co.kr/main.do", desc: "고속버스통합예매", icon: "🚌" },
-      { category: "서비스", name: "구글지도", url: "https://www.google.co.kr/maps", desc: "지도맵", icon: "🗺️️" },
+      { category: "서비스", name: "구글지도", url: "https://www.google.co.kr/maps", desc: "지도맵", icon: "🗺" },
       { category: "서비스", name: "지하철노선", url: "https://map.naver.com/p/subway/1000/-/-/", desc: "네이버노선표", icon: "🚇" },
       { category: "서비스", name: "우편번호", url: "https://www.epost.go.kr/search.RetrieveIntegrationNewZipCdList.comm", desc: "우편번호검색", icon: "📮" },
       { category: "서비스", name: "카카오맵", url: "https://map.kakao.com/?nil_profile=title&nil_src=local", desc: "교통정보", icon: "📍" },
@@ -397,7 +399,7 @@
       { category: "알뜰정보", name: "정보통통", url: "https://www.jungbo114.com/", desc: "잡다한 모든 정보", icon: "💡" },
       { category: "알뜰정보", name: "이지티켓", url: "https://easyticket.co.kr/", desc: "여행정보 매거진", icon: "🎫" },
       { category: "알뜰정보", name: "펴늬", url: "https://pyony.com/", desc: "편의점할인", icon: "🏪" },
-      { category: "알뜰정보", name: "핸드폰한", url: "https://핸드폰.한국/", desc: "알뜰폰 요금제 비교 검색", icon: "📲" },
+      { category: "알뜰정보", name: "핸드폰한국", url: "https://핸드폰.한국/", desc: "알뜰폰 요금제 비교 검색", icon: "📲" },
       { category: "알뜰정보", name: "평생요금제닷컴", url: "https://pyungyo.com/", desc: "알뜰폰 요금제 비교 검색", icon: "📱" },
       { category: "알뜰정보", name: "사기조회", url: "https://web.joongna.com/fraud", desc: "중고나라 사기조회", icon: "🚨" },
       { category: "알뜰정보", name: "우아하우스", url: "https://wooahouse.com/", desc: "무제한 무료 도구모음", icon: "🧰" },
@@ -465,7 +467,6 @@
       { category: "토렌트", name: "인트뮤직", url: "https://intmusic.net/", desc: "음원 다운로드", icon: "🧲" },
       { category: "토렌트", name: "겟락뮤직", url: "https://getrockmusic.net/", desc: "음원 다운로드", icon: "🧲" },
       { category: "토렌트", name: "칸나", url: "https://canna.to/?lang=eng/", desc: "음원 다운로드", icon: "🧲" },
-      { category: "토렌트", name: "오디오핏쳐", url: "https://audiofetcher.com/", desc: "음원 다운로드", icon: "🧲" },
       { category: "토렌트", name: "디스코그라피아", url: "https://www.discografias-completas.org/", desc: "음원 다운로드", icon: "🧲" },
       { category: "토렌트", name: "뉴앨범", url: "https://newalbumreleases.net/", desc: "음원 다운로드", icon: "🧲" },
       { category: "토렌트", name: "HQ 힙합", url: "https://94hiphop.com/", desc: "음원 다운로드", icon: "🧲" },
@@ -484,9 +485,6 @@
       { category: "토렌트", name: "스팀립", url: "https://steamrip.com/", desc: "복돌이", icon: "🕹️" },
       { category: "토렌트", name: "Xatab", url: "https://byxatab.com/", desc: "복돌이", icon: "🕹️" },
       { category: "토렌트", name: "Spinneret", url: "https://spinneretrepacks.qzz.io/", desc: "복돌이", icon: "🕹️" },
-      { category: "토렌트", name: "리팩게임즈", url: "https://repack-games.com/", desc: "복돌이", icon: "🕹️" },
-
-
 
       // [포털/커뮤니티]
       { category: "포털/커뮤니티", name: "인벤", url: "https://www.inven.co.kr/", desc: "게임 커뮤니티", icon: "⚔️" },
@@ -587,22 +585,18 @@
       // [AI tool]
       { category: "AI tool", name: "ChatGPT", url: "https://chatgpt.com", desc: "OpenAI 대화형 AI 모델", icon: "🤖" },
       { category: "AI tool", name: "Claude", url: "https://claude.ai", desc: "Anthropic의 대화형 AI 서비스", icon: "🧠" },
-      { category: "AI tool", name: "Midjourney", url: "https://www.midjourney.com", desc: "고성능 AI 이미지 생성 툴", icon: "🎨" }
-      { category: "AI tool", name: "WhisperSubTranslate", url: "https://github.com/Blue-B/WhisperSubTranslate/blob/main/docs/README.ko.md", desc: "AI SUB 툴", icon: "🎨" }
-      { category: "AI tool", name: "태그연습장", url: "https://wittazzurri.com/editor/html_editor.php", desc: "태그연습장", icon: "🎨" }   
+      { category: "AI tool", name: "Midjourney", url: "https://www.midjourney.com", desc: "고성능 AI 이미지 생성 툴", icon: "🎨" },
+      { category: "AI tool", name: "WhisperSubTranslate", url: "https://github.com/Blue-B/WhisperSubTranslate/blob/main/docs/README.ko.md", desc: "AI SUB 툴", icon: "🎨" },
+      { category: "AI tool", name: "태그연습장", url: "https://wittazzurri.com/editor/html_editor.php", desc: "태그연습장", icon: "🎨" }
     ];
 
-    // DOM 요소 참조
-    const linkGrid = document.getElementById('linkGrid');
-    const categoryBar = document.getElementById('categoryBar');
-
-    // 카테고리 버튼 생성
-    categoryBar.innerHTML = categoryList.map((cat, idx) => `
-      <button class="category-btn ${idx === 0 ? 'active' : ''}" onclick="filterCategory('${cat}')">${cat}</button>
-    `).join('');
-
-    // 링크 카드 렌더링 함수
+    /* =========================================================
+       3. 렌더링 및 필터링 제어
+    ========================================================= */
     function renderLinks(data) {
+      const linkGrid = document.getElementById('linkGrid');
+      if (!linkGrid) return;
+
       linkGrid.innerHTML = data.map((item, index) => `
         <a href="${item.url}" class="link-card" target="_blank" rel="noopener noreferrer">
           <div class="rank-number">${index + 1}</div>
@@ -615,13 +609,17 @@
       `).join('');
     }
 
-    // 카테고리 필터링 함수
     function filterCategory(category) {
       document.querySelectorAll('.category-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.textContent.trim() === category);
+        const btnText = btn.textContent.trim();
+        if (btnText === category) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
       });
 
-      if (category === '전체') {
+      if (category === "전체") {
         renderLinks(links);
       } else {
         const filtered = links.filter(item => item.category === category);
@@ -629,8 +627,18 @@
       }
     }
 
-    // 초기 실행 (전체 목록 출력)
-    renderLinks(links);
+    // DOM 준비 완료 시 안전하게 초기화
+    document.addEventListener('DOMContentLoaded', function() {
+      const categoryBar = document.getElementById('categoryBar');
+      if (categoryBar) {
+        categoryBar.innerHTML = categoryList.map((cat, idx) => `
+          <button class="category-btn ${idx === 0 ? 'active' : ''}" onclick="filterCategory('${cat}')">${cat}</button>
+        `).join('');
+      }
+
+      // 초기 104개 전체 목록 출력
+      renderLinks(links);
+    });
   </script>
 </body>
 </html>
